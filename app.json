@@ -20,13 +20,23 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.ferdev.fivetenedores",
       "permissions": [
         "CAMERA",
-        "MEDIA_LIBRARY"
+        "MEDIA_LIBRARY",
+        "CAMERA_ROLL",
+        "LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
       ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDWDSS0WC1bOCwRc4tgo0e9EFidji7RuDw"
+        }
       }
     },
     "web": {

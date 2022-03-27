@@ -1,0 +1,5 @@
+Accessing credentials for manax in project 5-tenedores
+Google Certificate Fingerprint:     DC:E9:9F:08:36:F8:26:9A:F0:75:3C:AC:C5:92:E0:ED:9E:77:4A:BF
+Google Certificate Hash (SHA-1):    DCE99F0836F8269AF0753CACC592E0ED9E774ABF
+Google Certificate Hash (SHA-256):  8315B4FE25DAB78FAA28A8BE2E3DDB3ADB36814A5E82CE1F1B381598C6EE3EE9
+Facebook Key Hash:                  3OmfCDb4JprwdTysxZLg7Z53Sr8=
