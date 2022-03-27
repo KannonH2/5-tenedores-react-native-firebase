@@ -5,25 +5,37 @@ import { Button } from "react-native-elements";
 import * as firebase from "firebase";
 import Loading from "../../components/Loading";
 import InfoUser from "../../components/Account/InfoUser";
+import AccountOptions from "../../components/Account/AccountOptions";
 
 export default function LoggedUser() {
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState("");
   const [userInfo, setUserInfo] = useState(null);
+  const [reloadData, setReloadData] = useState(false);
   const toastRef = useRef();
 
   useEffect(() => {
     (async () => {
       const user = await firebase.auth().currentUser;
       setUserInfo(user);
+
     })();
-  }, []);
+    setReloadData(false);
+  }, [reloadData]);
 
   return (
     <View style={styles.viewUserInfo}>
-      {userInfo && <InfoUser userInfo={userInfo} />}
+      {userInfo && (
+        <InfoUser
+          userInfo={userInfo}
+          setLoading={setLoading}
+          setLoadingText={setLoadingText}
+          toastRef={toastRef}
+        />
+      )}
 
-      <Text>Account Options..</Text>
+      <AccountOptions userInfo={userInfo} toastRef={toastRef} setReloadData={setReloadData} />
+      
       <Button
         title="Cerrar Sesion"
         buttonStyle={styles.btnCloseSession}
