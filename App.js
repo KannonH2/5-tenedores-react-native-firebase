@@ -1,28 +1,19 @@
-import React from 'react';
-import { firebaseApp } from './app/utils/firebase';
-import { LogBox } from 'react-native';
-import Navigation from './app/navigations/Navigation';
-import {decode, encode} from 'base-64'
+import { LogBox } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import Toast from "react-native-toast-message";
+import { AppNavigation } from "./src/navigation/AppNavigation";
+import { initFirebase } from "./src/utils/firebase";
 
-if (!global.btoa) { global.btoa = encode }
-if (!global.atob) { global.atob = decode }
-
-LogBox.ignoreLogs(
-  [
-    'Warning: ...', 
-    'expo-permissions is ',
-    'Unhandled promise rejection',
-    'Setting a timer', 
-    'It appears that',
-    'This can cause',
-    'AsyncStorage has been',
-    'Warning: Failed prop type: Invalid prop `',
-  ]); // Ignore log notification by message
-LogBox.ignoreAllLogs();//Ignore all log notifications
+LogBox.ignoreAllLogs();
 
 export default function App() {
-  
   return (
-    <Navigation />
+    <>
+      <NavigationContainer>
+        <AppNavigation />
+      </NavigationContainer>
+
+      <Toast />
+    </>
   );
 }
